@@ -10,7 +10,10 @@ $endif$
 
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
-
+  
+% tightlist macro required by pandoc >= 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}  
 
 
 \usepackage{abstract}
@@ -90,7 +93,8 @@ $endif$
 
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\itshape}
-\titleformat*{\subsubsection}{\normalsize\itshape}
+% \titleformat*{\subsubsection}[wrap]{\normalsize\itshape}
+\titleformat{\subsubsection}[runin]{\normalsize\itshape}{\subsubsectionname\ \thesubsubsection}{}{}
 \titleformat*{\paragraph}{\normalsize\itshape}
 \titleformat*{\subparagraph}{\normalsize\itshape}
 
